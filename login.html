@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <style>
+    body{font-family:Arial;background:#f2f2f2}
+    .box{width:300px;margin:100px auto;background:#fff;padding:20px;border-radius:10px}
+    input,button{width:100%;padding:10px;margin:8px 0}
+    button{background:green;color:white;border:none}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="msg"></p>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "PASTE_HERE",
+      authDomain: "PASTE_HERE",
+      projectId: "PASTE_HERE",
+      storageBucket: "PASTE_HERE",
+      messagingSenderId: "PASTE_HERE",
+      appId: "PASTE_HERE"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    function login(){
+      const email = document.getElementById("email").value;
+      const pass = document.getElementById("password").value;
+
+      firebase.auth().signInWithEmailAndPassword(email, pass)
+        .then(()=>{
+          alert("Login Successful");
+        })
+        .catch(err=>{
+          document.getElementById("msg").innerText = err.message;
+        });
+    }
+  </script>
+</body>
+</html>
