@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Website</title>
-  <meta charset="UTF-8">
+  <title>Register with OTP</title>
   <style>
-    body{
+    body {
       font-family: Arial;
-      background:#f2f2f2;
-      text-align:center;
-      padding-top:60px;
+      background: #f2f2f2;
     }
-    .box{
-      background:white;
-      width:300px;
-      margin:auto;
-      padding:20px;
-      border-radius:10px;
-      box-shadow:0 0 10px #ccc;
+    .box {
+      width: 300px;
+      margin: 60px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px #ccc;
     }
-    input,button{
-      width:90%;
-      padding:10px;
-      margin:8px 0;
+    input, button {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
     }
-    button{
-      background:green;
-      color:white;
-      border:none;
-      font-size:16px;
+    button {
+      background: green;
+      color: white;
+      border: none;
+      font-size: 16px;
     }
   </style>
 </head>
@@ -35,12 +33,39 @@
 
 <div class="box">
   <h2>Register</h2>
-  <input type="text" placeholder="Full Name">
-  <input type="email" placeholder="Email">
-  <input type="tel" placeholder="Phone Number">
-  <input type="password" placeholder="Password">
-  <button>Register</button>
+  <input id="name" type="text" placeholder="Full Name">
+  <input id="email" type="email" placeholder="Email">
+  <input id="phone" type="tel" placeholder="Phone Number">
+  <input id="password" type="password" placeholder="Password">
+
+  <button onclick="sendOTP()">Send OTP</button>
+
+  <input id="otp" type="text" placeholder="Enter OTP">
+  <button onclick="verifyOTP()">Verify & Register</button>
 </div>
+
+<script>
+let generatedOTP = "";
+
+function sendOTP() {
+  let phone = document.getElementById("phone").value;
+  if (phone === "") {
+    alert("Phone number daalo!");
+    return;
+  }
+  generatedOTP = Math.floor(1000 + Math.random() * 9000);
+  alert("Demo OTP (SMS ke jagah yahin dikha raha): " + generatedOTP);
+}
+
+function verifyOTP() {
+  let userOTP = document.getElementById("otp").value;
+  if (userOTP === generatedOTP.toString()) {
+    alert("Registration Successful!");
+  } else {
+    alert("Wrong OTP!");
+  }
+}
+</script>
 
 </body>
 </html>
