@@ -1,142 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>BIGPRO Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-*{box-sizing:border-box;font-family:Arial;}
+*{box-sizing:border-box;font-family:Segoe UI,Arial}
 body{
   margin:0;
   min-height:100vh;
+  background:
+    radial-gradient(circle at top,#6a00ff,#3a006f 60%,#1a002f),
+    url('bg-stars.png');
+  background-size:cover;
   display:flex;
   justify-content:center;
   align-items:center;
-  background:
-  radial-gradient(circle at top, #7b2cff, #2a004f 70%),
-  linear-gradient(135deg,#7b2cff,#1a0033);
 }
-
 .card{
-  width:90%;
-  max-width:420px;
-  background:rgba(40,0,70,.75);
-  backdrop-filter:blur(18px);
-  border-radius:35px;
-  padding:35px 22px;
+  width:92%;
+  max-width:430px;
+  background:linear-gradient(180deg,#3a005f,#220038);
+  border-radius:20px;
+  padding:30px 25px;
   color:white;
-  box-shadow:0 40px 90px rgba(0,0,0,.7);
-  border:1px solid rgba(255,255,255,.15);
-  text-align:center;
+  box-shadow:0 0 40px rgba(255,200,0,.3);
 }
-
 .logo{
-  font-size:36px;
-  font-weight:900;
+  text-align:center;
+  font-size:32px;
+  font-weight:800;
   color:#ffcc00;
-  margin-bottom:6px;
+  margin-bottom:5px;
 }
-
-h2{margin:12px 0 25px;font-weight:600;}
-
-.field{
-  position:relative;
-  margin:18px 0;
-}
-.field input{
-  width:100%;
-  padding:17px 60px;
-  border:none;
-  border-radius:22px;
-  background:rgba(255,255,255,.1);
-  color:white;
-  font-size:16px;
-  outline:none;
-}
-.icon{
-  position:absolute;
-  left:16px;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:22px;
-}
-.eye{
-  position:absolute;
-  right:16px;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:22px;
-  cursor:pointer;
-}
-
-.btn{
-  margin-top:25px;
-  width:100%;
-  padding:17px;
-  border:none;
-  border-radius:28px;
-  font-size:18px;
-  font-weight:700;
-  background:linear-gradient(135deg,#ffe066,#ff9f00);
-  color:black;
-  cursor:pointer;
-  box-shadow:0 10px 25px rgba(255,170,0,.6);
-}
-
-.links{
-  margin-top:18px;
-  display:flex;
-  justify-content:space-between;
-  font-size:14px;
-  color:#ffd966;
-}
-
-.links div{
+h2{text-align:center;margin:10px 0 25px}
+.input-box{
+  background:#2c0046;
+  border-radius:12px;
   display:flex;
   align-items:center;
-  gap:6px;
+  padding:12px 15px;
+  margin-bottom:15px;
 }
-
-.register{
-  margin-top:14px;
-  font-size:15px;
+.input-box img{width:22px;margin-right:10px}
+.input-box input{
+  background:none;border:none;outline:none;
+  color:white;font-size:16px;width:100%;
 }
-.register span{color:#ffcc00;font-weight:600;}
+.btn{
+  width:100%;
+  background:linear-gradient(90deg,#ffd000,#ff9f00);
+  border:none;
+  border-radius:30px;
+  padding:14px;
+  font-size:18px;
+  font-weight:bold;
+  margin:15px 0;
+  cursor:pointer;
+}
+.links{
+  text-align:center;
+  margin-top:8px;
+}
+.links span{color:#ffd000;font-weight:600}
+.bottom{
+  display:flex;
+  justify-content:space-between;
+  margin-top:20px;
+}
+.bottom div{
+  text-align:center;
+  color:#ffd000;
+  font-size:14px;
+}
+.bottom img{width:40px;display:block;margin:0 auto 6px}
 </style>
 </head>
-
 <body>
+
 <div class="card">
   <div class="logo">BIGPRO</div>
   <h2>Login to BIGPRO</h2>
 
-  <div class="field">
-    <div class="icon">📧</div>
+  <div class="input-box">
+    <img src="email.png">
     <input type="email" placeholder="Enter your email">
   </div>
 
-  <div class="field">
-    <div class="icon">🔒</div>
-    <input type="password" id="pass" placeholder="Enter password">
-    <div class="eye" onclick="toggle()">👁️</div>
+  <div class="input-box">
+    <img src="lock.png">
+    <input type="password" placeholder="Enter password">
   </div>
 
   <button class="btn">Login</button>
 
-  <div class="register">
+  <div class="links">
     New user? <span>Register here</span>
   </div>
 
-  <div class="links">
-    <div>🔑 Forgot password</div>
-    <div>🎧 Customer Service</div>
+  <div class="bottom">
+    <div>
+      <img src="key.png">
+      Forgot password
+    </div>
+    <div>
+      <img src="support.png">
+      Customer Service
+    </div>
   </div>
 </div>
 
-<script>
-function toggle(){
-  let p=document.getElementById("pass");
-  p.type = p.type==="password" ? "text" : "password";
-}
-</script>
 </body>
 </html>
