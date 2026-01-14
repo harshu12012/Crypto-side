@@ -1,125 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>BIGPRO Login</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-*{box-sizing:border-box;font-family:Segoe UI,Arial}
-body{
-  margin:0;
-  padding:0;
-  width:100%;
-  height:100vh;
-  min-height:100vh;
-  background:
-  radial-gradient(circle at top, #6a00ff, #2a0055),
-  url("images/862464429d63305ff1445ec4c5272682.jpg");
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  overflow:hidden;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIGPRO Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-html, body{
-  width:100%;
-  height:100%;
-}
-.card{
-  width:92%;
-  max-width:430px;
-  background:linear-gradient(180deg,#3a005f,#220038);
-  border-radius:20px;
-  padding:30px 25px;
-  color:white;
-  box-shadow:0 0 40px rgba(255,200,0,.3);
-}
-.logo{
-  text-align:center;
-  font-size:32px;
-  font-weight:800;
-  color:#ffcc00;
-  margin-bottom:5px;
-}
-h2{text-align:center;margin:10px 0 25px}
-.input-box{
-  background:#2c0046;
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  padding:12px 15px;
-  margin-bottom:15px;
-}
-.input-box img{width:22px;margin-right:10px}
-.input-box input{
-  background:none;border:none;outline:none;
-  color:white;font-size:16px;width:100%;
-}
-.btn{
-  width:100%;
-  background:linear-gradient(90deg,#ffd000,#ff9f00);
-  border:none;
-  border-radius:30px;
-  padding:14px;
-  font-size:18px;
-  font-weight:bold;
-  margin:15px 0;
-  cursor:pointer;
-}
-.links{
-  text-align:center;
-  margin-top:8px;
-}
-.links span{color:#ffd000;font-weight:600}
-.bottom{
-  display:flex;
-  justify-content:space-between;
-  margin-top:20px;
-}
-.bottom div{
-  text-align:center;
-  color:#ffd000;
-  font-size:14px;
-}
-.bottom img{width:40px;display:block;margin:0 auto 6px}
-</style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    body {
+      background: url("images/862464429d63305ff1445ec4c5272682.jpg") no-repeat center center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .card {
+      width: 92%;
+      max-width: 430px;
+      background: rgba(44, 0, 70, 0.85);
+      border-radius: 20px;
+      padding: 30px 25px;
+      color: white;
+      box-shadow: 0 0 40px rgba(255, 200, 0, 0.4);
+      backdrop-filter: blur(6px);
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 800;
+      color: #ffcc00;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 10px 0 20px;
+    }
+
+    .input-box {
+      background: rgba(60, 0, 90, 0.9);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      padding: 12px 15px;
+      margin-bottom: 15px;
+    }
+
+    .input-box img {
+      width: 22px;
+      margin-right: 10px;
+    }
+
+    .input-box input {
+      background: none;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(180deg, #ffd000, #ff9900);
+      color: black;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 10px 0;
+      box-shadow: 0 0 15px rgba(255, 200, 0, 0.5);
+    }
+
+    .center {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .center span {
+      color: #ffcc00;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+      color: #ffcc00;
+      font-size: 14px;
+    }
+
+    .bottom div {
+      display: flex;
+      align-items: center;
+    }
+
+    .bottom img {
+      width: 18px;
+      margin-right: 6px;
+    }
+  </style>
 </head>
 <body>
 
-<div class="card">
-  <div class="logo">BIGPRO</div>
-  <h2>Login to BIGPRO</h2>
+  <div class="card">
+    <div class="logo">BIGPRO</div>
+    <h2>Login to BIGPRO</h2>
 
-  <div class="input-box">
-    <img src="email.png">
-    <input type="email" placeholder="Enter your email">
-  </div>
-
-  <div class="input-box">
-    <img src="lock.png">
-    <input type="password" placeholder="Enter password">
-  </div>
-
-  <button class="btn">Login</button>
-
-  <div class="links">
-    New user? <span>Register here</span>
-  </div>
-
-  <div class="bottom">
-    <div>
-      <img src="key.png">
-      Forgot password
+    <div class="input-box">
+      <img src="images/email.png" alt="email">
+      <input type="email" placeholder="Enter your email">
     </div>
-    <div>
-      <img src="support.png">
-      Customer Service
+
+    <div class="input-box">
+      <img src="images/lock.png" alt="password">
+      <input type="password" placeholder="Enter password">
+    </div>
+
+    <button class="btn">Login</button>
+
+    <div class="center">
+      New user? <span>Register here</span>
+    </div>
+
+    <div class="bottom">
+      <div>
+        <img src="images/help.png" alt="help">
+        Forgot password
+      </div>
+      <div>
+        <img src="images/support.png" alt="support">
+        Customer Service
+      </div>
     </div>
   </div>
-</div>
 
 </body>
 </html>
