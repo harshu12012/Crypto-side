@@ -1,142 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>BIGPRO</title>
-<style>
-*{box-sizing:border-box;font-family:Arial,sans-serif}
-body{
-  margin:0;
-  min-height:100vh;
-  display:flex;
-  justify-content: flex-start;
-padding-top: 80px;
-  align-items:center;
-  background:radial-gradient(circle at top,#444,#000 60%,#000);
-  color:white;
-}
-
-/* CARD */
-.card{
-  width:96%;
-  max-width:650px;
-  padding:40px 30px;
-  border-radius:28px;
-  background:linear-gradient(180deg,#111,#000);
-  position:relative;
-  box-shadow:
-    0 0 12px rgba(255,215,0,.4),
-    0 0 22px rgba(255,165,0,.25);
-}
-.card::before{
-  content:"";
-  position:absolute;
-  inset:-4px;
-  border-radius:32px;
-  background:linear-gradient(45deg,#ffcc00,#ff8800,#ffd700,#ffcc00);
-  z-index:-1;
-  filter:blur(6px);
-}
-
-/* TEXT */
-.logo{
-  text-align:center;
-  font-size:32px;
-  font-weight:900;
-  color:#ffd700;
-  text-shadow:0 0 15px #ffcc00;
-}
-.sub{
-  text-align:center;
-  margin:6px 0 18px;
-  color:#ccc;
-}
-
-/* INPUT */
-.field{
-  display:flex;
-  align-items:center;
-  margin-bottom:14px;
-  background:rgba(255,255,255,.06);
-  border-radius:16px;
-  padding:12px 14px;
-  box-shadow:
-    inset 0 0 12px rgba(255,215,0,.15),
-    0 0 12px rgba(255,215,0,.2);
-}
-.field span{margin-right:10px;font-size:18px;color:#ffd700}
-.field input{
-  flex:1;
-  background:none;
-  border:none;
-  outline:none;
-  color:white;
-  font-size:15px;
-}
-.eye{cursor:pointer;color:#ffd700}
-
-/* BUTTON */
-.btn{
-  margin:20px 0 12px;
-  padding:14px;
-  border-radius:30px;
-  text-align:center;
-  font-weight:bold;
-  font-size:17px;
-  background:linear-gradient(90deg,#ffcc00,#ff9900);
-  color:black;
-  box-shadow:
-    0 0 12px rgba(255,200,0,.6),
-    0 0 20px rgba(255,140,0,.4);
-}
-
-/* LINKS */
-.small{
-  text-align:center;
-  margin-bottom:10px;
-  color:#ccc;
-}
-.bottom{
-  display:flex;
-  justify-content:space-between;
-  font-size:13px;
-  opacity:.9;
-  color:#ffd700;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>BIGPRO Color Prediction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#000;
+      color:#fff;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+    }
+    .game{
+      width:95%;
+      max-width:420px;
+      background:#111;
+      border-radius:20px;
+      padding:20px;
+      box-shadow:0 0 40px gold;
+      text-align:center;
+    }
+    h1{color:gold;margin-bottom:5px;}
+    .balance{
+      margin:10px 0;
+      font-size:18px;
+      color:#0f0;
+    }
+    input{
+      width:100%;
+      padding:12px;
+      border-radius:10px;
+      border:none;
+      margin:10px 0;
+      font-size:16px;
+    }
+    .colors{
+      display:flex;
+      justify-content:space-between;
+      margin:15px 0;
+    }
+    .btn{
+      flex:1;
+      margin:0 5px;
+      padding:15px 0;
+      border:none;
+      border-radius:15px;
+      font-size:16px;
+      font-weight:bold;
+      color:#000;
+      cursor:pointer;
+    }
+    .red{background:red;}
+    .green{background:lime;}
+    .violet{background:violet;}
+    .result{
+      margin-top:15px;
+      font-size:18px;
+      min-height:25px;
+    }
+    .timer{
+      margin-top:10px;
+      font-size:20px;
+      color:gold;
+    }
+  </style>
 </head>
-
 <body>
-  <div class="card">
-    <div class="logo">BIGPRO</div>
-    <div class="sub">Login to BIGPRO</div>
+  <div class="game">
+    <h1>BIGPRO</h1>
+    <div>Color Prediction Game</div>
+    <div class="balance">Balance: ₹<span id="bal">1000</span></div>
 
-    <div class="field">
-      <span>📧</span>
-      <input type="email" placeholder="Enter your email">
+    <input type="number" id="bet" placeholder="Enter Bet Amount">
+
+    <div class="colors">
+      <button class="btn red" onclick="play('red')">Red</button>
+      <button class="btn green" onclick="play('green')">Green</button>
+      <button class="btn violet" onclick="play('violet')">Violet</button>
     </div>
 
-    <div class="field">
-      <span>🔒</span>
-      <input type="password" placeholder="Enter password" id="pass">
-      <span class="eye" onclick="toggle()">👁</span>
-    </div>
-
-    <div class="btn">Login</div>
-
-    <div class="small">New user? <b style="color:#ffd700">Register here</b></div>
-
-    <div class="bottom">
-      <div>🔑 Forgot password</div>
-      <div>🎧 Customer Service</div>
-    </div>
+    <div class="timer">Next Round in: <span id="time">10</span>s</div>
+    <div class="result" id="result"></div>
   </div>
 
-<script>
-function toggle(){
-  let p=document.getElementById("pass");
-  p.type = p.type==="password" ? "text" : "password";
-}
-</script>
+  <script>
+    let balance = 1000;
+    let chosenColor = null;
+    let timer = 10;
+
+    function play(color){
+      chosenColor = color;
+      document.getElementById("result").innerText = 
+        "You selected: " + color.toUpperCase();
+    }
+
+    function randomColor(){
+      const arr = ["red","green","violet"];
+      return arr[Math.floor(Math.random()*3)];
+    }
+
+    function round(){
+      let bet = Number(document.getElementById("bet").value);
+      if(!chosenColor || bet<=0 || bet>balance){
+        document.getElementById("result").innerText = 
+          "Enter valid bet & select color!";
+        return;
+      }
+
+      let winColor = randomColor();
+      if(winColor === chosenColor){
+        balance += bet;
+        document.getElementById("result").innerText =
+          "Result: " + winColor.toUpperCase() + " — You WIN!";
+      }else{
+        balance -= bet;
+        document.getElementById("result").innerText =
+          "Result: " + winColor.toUpperCase() + " — You LOSE!";
+      }
+      document.getElementById("bal").innerText = balance;
+      chosenColor = null;
+      document.getElementById("bet").value = "";
+    }
+
+    setInterval(()=>{
+      timer--;
+      document.getElementById("time").innerText = timer;
+      if(timer===0){
+        round();
+        timer = 10;
+      }
+    },1000);
+  </script>
 </body>
-</html>
+  </html>
