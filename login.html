@@ -4,118 +4,123 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BIGPRO Login</title>
+
 <style>
-*{box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;}
-body{margin:0;background:#f6f7fb;}
+*{box-sizing:border-box;font-family:Arial,sans-serif;}
+body{
+  margin:0;
+  background:#f6f7fb;
+}
 
+/* SAME HEADER AS REGISTER */
 .header{
-background: linear-gradient(to right,#ff6b6b,#ff8a8a);
-color:white;
-padding:25px 20px;
+  background:linear-gradient(to right,#ff6b6b,#ff8a8a);
+  color:white;
+  padding:25px 20px;
+  text-align:center;
 }
+.header h2{margin:0;font-size:22px;font-weight:700;}
+.header p{margin:8px 0 0;font-size:14px;opacity:.95;}
 
-.header h2{margin:0;}
-.header p{margin:5px 0 0;font-size:14px;opacity:.9;}
+/* CONTAINER */
+.container{padding:20px;}
 
+/* TABS */
 .tabs{
-display:flex;
-background:white;
+  display:flex;
+  background:white;
 }
-
 .tab{
-flex:1;
-text-align:center;
-padding:12px;
-font-weight:bold;
-color:#888;
+  flex:1;
+  text-align:center;
+  padding:12px;
+  font-weight:700;
+  color:#888;
 }
-
 .tab.active{
-color:#ff6b6b;
-border-bottom:3px solid #ff6b6b;
+  color:#ff6b6b;
+  border-bottom:3px solid #ff6b6b;
 }
 
-.form{
-padding:20px;
-}
-
+/* LABEL */
 .label{
-margin-top:15px;
-font-weight:600;
-color:#444;
+  margin-top:15px;
+  font-weight:700;
+  color:#555;
 }
 
+/* INPUT */
 .input-box{
-display:flex;
-align-items:center;
-background:white;
-border-radius:12px;
-padding:12px;
-margin-top:8px;
-box-shadow:0 2px 6px rgba(0,0,0,.05);
+  background:white;
+  border-radius:12px;
+  padding:12px;
+  margin-top:6px;
+  display:flex;
+  align-items:center;
+  gap:8px;
 }
-
-.input-box span{
-margin-right:8px;
-font-size:18px;
-}
-
 .input-box input{
-border:none;
-outline:none;
-width:100%;
-font-size:15px;
+  border:none;
+  outline:none;
+  width:100%;
+  font-size:14px;
 }
 
+/* CHECKBOX */
 .checkbox{
-margin:15px 0;
-color:#666;
+  margin:15px 0;
+  color:#777;
 }
 
-.btn{
-width:100%;
-padding:14px;
-border:none;
-border-radius:30px;
-font-size:18px;
-font-weight:bold;
-margin-top:10px;
-}
-
+/* BUTTONS – SAME AS REGISTER */
 .btn-main{
-background:#ff6b6b;
-color:white;
+  width:100%;
+  background:linear-gradient(to right,#ff6b6b,#ff8a8a);
+  color:white;
+  border:none;
+  border-radius:30px;
+  padding:14px;
+  font-size:16px;
+  font-weight:700;
 }
-
 .btn-outline{
-background:white;
-border:2px solid #ff6b6b;
-color:#ff6b6b;
+  width:100%;
+  margin-top:12px;
+  border:2px solid #ff6b6b;
+  color:#ff6b6b;
+  background:white;
+  border-radius:30px;
+  padding:14px;
+  font-size:16px;
+  font-weight:700;
 }
 
+/* SERVICE */
 .service{
-text-align:center;
-margin-top:20px;
-color:#ff6b6b;
-font-weight:600;
+  text-align:center;
+  margin-top:20px;
+  color:#ff6b6b;
+  font-weight:700;
 }
 
+/* CHAT ICON */
 .chat{
-position:fixed;
-right:15px;
-bottom:15px;
-background:#ff6b6b;
-color:white;
-width:50px;
-height:50px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:22px;
+  position:fixed;
+  right:15px;
+  bottom:15px;
+  background:#ff6b6b;
+  color:white;
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
 }
 </style>
 </head>
+
 <body>
 
 <div class="header">
@@ -125,10 +130,10 @@ font-size:22px;
 
 <div class="tabs">
   <div class="tab active">📱 Log in with phone</div>
-  <div class="tab">📧 Email Login</div>
+  <div class="tab">✉️ Email Login</div>
 </div>
 
-<div class="form">
+<div class="container">
 
   <div class="label">📱 Phone number</div>
   <div class="input-box">
@@ -136,9 +141,8 @@ font-size:22px;
     <input type="text" placeholder="Please enter the phone number">
   </div>
 
-  <div class="label">🔒 Password</div>
+  <div class="label">🔐 Password</div>
   <div class="input-box">
-    <span>🔑</span>
     <input type="password" placeholder="Please enter Password">
   </div>
 
@@ -146,14 +150,13 @@ font-size:22px;
     <input type="checkbox"> Remember password
   </div>
 
-  <button class="btn btn-main">Log in</button>
-  <button class="btn btn-outline" onclick="location.href='index.html'">Register</button>
+  <button class="btn-main">Log in</button>
+  <button class="btn-outline">Register</button>
 
   <div class="service">🎧 Customer Service</div>
-
 </div>
 
 <div class="chat">💬</div>
 
 </body>
-</html>  
+</html>
