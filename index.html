@@ -1,139 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>BIGPRO Register</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Register - BIGPRO</title>
+
 <style>
 body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#f2f2f2;
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f6f7fb;
 }
 .header{
-background:#e53935;
-color:white;
-padding:20px;
+  background: linear-gradient(to right,#ff6b6b,#ff8a8a);
+  color:white;
+  padding:20px;
 }
-.header h2{margin:0;}
-.header p{font-size:13px;opacity:0.9;}
-.card{
-background:white;
-border-radius:20px 20px 0 0;
-margin-top:-10px;
-padding:20px;
+.header h1{
+  margin:0;
+  font-size:22px;
+  text-align:center;
+}
+.header p{
+  margin:8px 0 0;
+  font-size:14px;
+}
+.container{
+  padding:20px;
 }
 .section-title{
-text-align:center;
-font-weight:bold;
-color:#e53935;
-margin-bottom:20px;
+  text-align:center;
+  color:#ff6b6b;
+  font-weight:bold;
+  margin:15px 0;
 }
-.input{
-margin-bottom:15px;
+.line{
+  height:2px;
+  background:#ff6b6b;
+  width:80%;
+  margin:0 auto 20px;
 }
-.input label{
-display:block;
-margin-bottom:5px;
-color:#444;
+.label{
+  color:#555;
+  margin:10px 0 5px;
+  display:flex;
+  align-items:center;
+  gap:8px;
 }
-.input input{
-width:100%;
-padding:12px;
-border:1px solid #ccc;
-border-radius:8px;
-font-size:15px;
+.input-box{
+  display:flex;
+  gap:10px;
 }
-.row{
-display:flex;
-gap:10px;
+input{
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:none;
+  background:white;
+  box-shadow:0 1px 5px rgba(0,0,0,0.05);
+  font-size:15px;
+}
+.small{
+  width:70px;
+  text-align:center;
 }
 .checkbox{
-margin:15px 0;
-font-size:13px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:15px 0;
+  color:#666;
+  font-size:14px;
 }
 .checkbox span{
-color:#e53935;
+  color:#ff6b6b;
 }
 .btn{
-width:100%;
-padding:14px;
-border:none;
-border-radius:25px;
-font-size:16px;
-background:#e53935;
-color:white;
+  background: linear-gradient(to right,#ff6b6b,#ff8a8a);
+  color:white;
+  border:none;
+  width:100%;
+  padding:15px;
+  border-radius:30px;
+  font-size:18px;
+  font-weight:bold;
 }
-.login-link{
-text-align:center;
-margin-top:15px;
+.bottom{
+  text-align:center;
+  margin-top:10px;
+  color:#666;
 }
-.login-link span{
-color:#e53935;
-font-weight:bold;
+.bottom span{
+  color:#ff6b6b;
+  font-weight:bold;
 }
-.customer{
-position:fixed;
-right:15px;
-bottom:15px;
-background:#e53935;
-color:white;
-width:45px;
-height:45px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:20px;
+.chat{
+  position:fixed;
+  right:15px;
+  bottom:80px;
+  background:#ff6b6b;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:22px;
 }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h2>Daman</h2>
+  <h1>🏆 BIGPRO</h1>
   <p>Please register by phone number or email</p>
 </div>
 
-<div class="card">
+<div class="container">
+
   <div class="section-title">Register your phone</div>
+  <div class="line"></div>
 
-  <div class="input">
-    <label>Phone number</label>
-    <div class="row">
-      <input style="width:25%" value="+91">
-      <input style="width:75%" placeholder="Please enter the phone number">
-    </div>
+  <div class="label">📱 Phone number</div>
+  <div class="input-box">
+    <input class="small" value="+91">
+    <input placeholder="Please enter the phone number">
   </div>
 
-  <div class="input">
-    <label>Set password</label>
-    <input type="password" placeholder="Set password">
-  </div>
+  <div class="label">🔒 Set password</div>
+  <input placeholder="Set password" type="password">
 
-  <div class="input">
-    <label>Confirm password</label>
-    <input type="password" placeholder="Confirm password">
-  </div>
+  <div class="label">🔒 Confirm password</div>
+  <input placeholder="Confirm password" type="password">
 
-  <div class="input">
-    <label>Invite code</label>
-    <input value="dljs01685078">
-  </div>
+  <div class="label">🎫 Invite code</div>
+  <input value="dljso1685078">
 
   <div class="checkbox">
     <input type="checkbox">
-    I have read and agree <span>[Privacy Agreement]</span>
+    <div>I have read and agree <span>[Privacy Agreement]</span></div>
   </div>
 
   <button class="btn">Register</button>
 
-  <div class="login-link">
+  <div class="bottom">
     I have an account <span>Login</span>
   </div>
 </div>
 
-<div class="customer">💬</div>
+<div class="chat">💬</div>
 
 </body>
 </html>
