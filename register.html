@@ -40,9 +40,9 @@ body{margin:0;font-family:Arial;background:#f6f7f9}
   <div class="label">🎫 Invite code</div>
   <input class="input" placeholder="invite code">
 
-  <p><input type="checkbox" id="agree">
-       
-  <button class="btn-main" id="registerBtn" disabled>Register</button>
+  <p><input type="checkbox"> I have read and agree <span style="color:#ff6b6b">[Privacy Agreement]</span></p>
+
+  <button class="btn-main">Register</button>
 
   <div class="bottom">
     I have an account 
@@ -51,19 +51,5 @@ body{margin:0;font-family:Arial;background:#f6f7f9}
 </div>
 
 <div class="chat">💬</div>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  var checkbox = document.getElementById("agree");
-  var button = document.getElementById("registerBtn");
-
-  checkbox.addEventListener("change", function () {
-    if (checkbox.checked) {
-      button.disabled = false;
-    } else {
-      button.disabled = true;
-    }
-  });
-});
-</script>
 </body>
 </html>
