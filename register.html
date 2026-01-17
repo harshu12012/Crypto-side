@@ -94,6 +94,27 @@ btn.onclick = () => {
   alert("Registration Successful!");
 }
 </script>
+<script>
+function toggle(passId, eyeId) {
+  var pass = document.getElementById(passId);
+  var eye = document.getElementById(eyeId);
 
+  if (pass.type === "password") {
+    pass.type = "text";
+    eye.innerText = "👁";
+  } else {
+    pass.type = "password";
+    eye.innerText = "🙈";
+  }
+}
+
+document.getElementById("eye1").onclick = function () {
+  toggle("pass1", "eye1");
+};
+
+document.getElementById("eye2").onclick = function () {
+  toggle("pass2", "eye2");
+};
+</script>
 </body>
 </html>
