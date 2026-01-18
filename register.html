@@ -70,20 +70,33 @@ const eye1 = document.getElementById("eye1");
 const eye2 = document.getElementById("eye2");
 const agree = document.getElementById("agree");
 const btn = document.getElementById("registerBtn");
+const phone = document.getElementById("phone");
+const invite = document.getElementById("invite");
+const supportBtn = document.getElementById("supportBtn");
 
-eye1.onclick = () => {
-  pass1.type = pass1.type === "password" ? "text" : "password";
+/* Eye toggle */
+function toggle(passId, eyeId) {
+  var pass = document.getElementById(passId);
+  var eye = document.getElementById(eyeId);
+  if (pass.type === "password") {
+    pass.type = "text";
+    eye.innerText = "🙈";
+  } else {
+    pass.type = "password";
+    eye.innerText = "👁️";
+  }
 }
-eye2.onclick = () => {
-  pass2.type = pass2.type === "password" ? "text" : "password";
-}
+eye1.onclick = () => toggle("pass1","eye1");
+eye2.onclick = () => toggle("pass2","eye2");
 
+/* Agree checkbox */
 agree.onchange = () => {
   btn.disabled = !agree.checked;
-}
+};
 
+/* Register button */
 btn.onclick = () => {
-  if(pass1.value === "" || pass2.value === "" || phone.value === ""){
+  if(phone.value=="" || pass1.value=="" || pass2.value==""){
     alert("Please fill all fields");
     return;
   }
@@ -91,32 +104,19 @@ btn.onclick = () => {
     alert("Passwords do not match");
     return;
   }
+
+  // Save data for login page
+  localStorage.setItem("bigpro_phone", phone.value);
+  localStorage.setItem("bigpro_pass", pass1.value);
+  localStorage.setItem("bigpro_invite", invite.value);
+
   alert("Registration Successful!");
-}
-</script>
-<script>
-function toggle(passId, eyeId) {
-  var pass = document.getElementById(passId);
-  var eye = document.getElementById(eyeId);
-
-  if (pass.type === "password") {
-    pass.type = "text";
-    eye.innerText = "👁";
-  } else {
-    pass.type = "password";
-    eye.innerText = "🙈";
-  }
-}
-
-document.getElementById("eye1").onclick = function () {
-  toggle("pass1", "eye1");
+  window.location.href="login.html";
 };
 
-document.getElementById("eye2").onclick = function () {
-  toggle("pass2", "eye2");
-};
-document.getElementById("supportBtn").onclick = function () {
-  var phone = "916205702371"; // yahan apna WhatsApp number daalo
+/* WhatsApp Support */
+supportBtn.onclick = () => {
+  var phone = "916205702371";
   var msg = "Hello, mujhe website me problem aa rahi hai. Please help.";
   var url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
   window.open(url, "_blank");
