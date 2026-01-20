@@ -5,101 +5,113 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BIGPRO Dashboard</title>
 <style>
-body{margin:0;font-family:Arial;background:#f4f4f4}
+body{margin:0;font-family:Arial;background:#f2f2f2}
 .header{
   background:linear-gradient(90deg,#ff9800,#ff5722);
-  color:#fff;text-align:center;padding:20px;font-weight:bold;
+  color:#fff;text-align:center;padding:20px
 }
-.grid{
+.header h2{margin:0}
+.notice{
+  background:#fff;padding:10px;font-size:13px;color:#555;
+  display:flex;align-items:center;gap:8px
+}
+.icons{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:10px;
   padding:15px;
+  background:#fff
 }
-.item{
-  background:#fff;
-  border-radius:12px;
-  padding:10px;
+.icon-box{
   text-align:center;
-  font-size:13px;
 }
-.item img{width:50px;height:50px}
+.icon{
+  width:60px;height:60px;border-radius:50%;
+  background:#eee;margin:0 auto 5px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px
+}
+.icon-box span{font-size:13px}
 
-.card{
-  margin:15px;
-  background:#00bcd4;
+.section{
+  margin:12px;
+  background:#4fc3f7;
   color:#fff;
-  border-radius:12px;
+  border-radius:10px;
   padding:15px;
+  position:relative
 }
-.card h3{margin:0 0 5px}
+.section h3{margin:0}
+.section small{opacity:.9}
+
 .member{
-  display:flex;
-  justify-content:space-between;
-  background:#fff;
-  margin:0 15px 10px;
-  padding:10px;
-  border-radius:8px;
-  font-size:14px;
+  display:flex;justify-content:space-between;
+  margin-top:10px;font-size:13px
 }
 
-.bottom{
-  position:fixed;
-  bottom:0;left:0;right:0;
-  background:#fff;
-  display:flex;
-  justify-content:space-around;
-  padding:10px 0;
-  border-top:1px solid #ddd;
+.bottom-nav{
+  position:fixed;bottom:0;left:0;right:0;
+  background:#fff;border-top:1px solid #ddd;
+  display:flex;justify-content:space-around;
+  padding:10px 0
 }
-.bottom div{text-align:center;font-size:12px;color:#555}
+.bottom-nav div{text-align:center;font-size:12px}
+.center-btn{
+  width:50px;height:50px;border-radius:50%;
+  background:#ff9800;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  margin-top:-25px;font-size:20px
+}
 </style>
 </head>
 <body>
 
 <div class="header">
-  WELCOME TO BIGPRO<br>
-  Join now and get lots of gifts
+  <h2>WELCOME TO BIGPRO</h2>
+  <p>Join now and get lots of gifts</p>
 </div>
 
-<div class="grid">
-  <div class="item">🎲<br>Lottery</div>
-  <div class="item">🎰<br>Slots</div>
-  <div class="item">⚽<br>Sports</div>
-  <div class="item">🎥<br>Video</div>
-  <div class="item">🃏<br>Card</div>
-  <div class="item">🐟<br>Fish</div>
-  <div class="item">✨<br>Magic</div>
-  <div class="item">🏆<br>Popular</div>
+<div class="notice">
+  🔊 Account safety and successful withdrawal process
 </div>
 
-<div class="card">
+<div class="icons">
+  <div class="icon-box"><div class="icon">🎟</div><span>लॉटरी</span></div>
+  <div class="icon-box"><div class="icon">🎰</div><span>हैंड</span></div>
+  <div class="icon-box"><div class="icon">⚽</div><span>खेल</span></div>
+  <div class="icon-box"><div class="icon">🎥</div><span>वीडियो</span></div>
+  <div class="icon-box"><div class="icon">🃏</div><span>शतरंज</span></div>
+  <div class="icon-box"><div class="icon">🐟</div><span>मछली</span></div>
+  <div class="icon-box"><div class="icon">✨</div><span>चमक</span></div>
+  <div class="icon-box"><div class="icon">🏆</div><span>लोकप्रिय</span></div>
+</div>
+
+<div class="section">
   <h3>Win Go</h3>
-  Guess the number, green/red wins
+  <small>संख्या का अनुमान लगाओ</small>
+  <div class="member">
+    <span>MemberDDQLKPP</span>
+    <span>₹196.00</span>
+  </div>
 </div>
 
-<div class="member">
-  <div>MemberDDQLKPP</div>
-  <div>₹196.00</div>
+<div class="section" style="background:#26c6da">
+  <h3>K3 Lotre</h3>
+  <small>उच्च/निम्न/विषम/सम</small>
+  <div class="member">
+    <span>Member90WAHLE</span>
+    <span>₹47.04</span>
+  </div>
 </div>
 
-<div class="card" style="background:#03a9f4">
-  <h3>K3 Lottery</h3>
-  High/Low/Odd/Even
-</div>
+<div style="height:80px"></div>
 
-<div class="member">
-  <div>MemberSOWAN12</div>
-  <div>₹47.04</div>
-</div>
-
-<div style="height:70px"></div>
-
-<div class="bottom">
+<div class="bottom-nav">
   <div>🏠<br>Home</div>
-  <div>💰<br>Wallet</div>
-  <div>🎮<br>Play</div>
-  <div>👤<br>Profile</div>
+  <div>🎮<br>Game</div>
+  <div class="center-btn">⬇</div>
+  <div>💼<br>Wallet</div>
+  <div>👤<br>Me</div>
 </div>
 
 </body>
