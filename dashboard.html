@@ -1,105 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BIGPRO Dashboard</title>
 <style>
-body{margin:0;font-family:Arial;background:#f6f7fb}
-.header{padding:12px;background:#fff;display:flex;align-items:center;gap:10px}
-.logo{font-weight:bold;color:#ff4d4d;font-size:20px}
-.banner{margin:10px;background:linear-gradient(135deg,#ff7a18,#ff3d3d);
-color:#fff;border-radius:12px;padding:15px}
-.wallet{display:flex;justify-content:space-between;align-items:center;
-background:#fff;margin:10px;border-radius:12px;padding:12px}
-.btn{padding:10px 15px;border-radius:10px;color:#fff;border:none}
-.withdraw{background:orange}
-.deposit{background:#ff4d4d}
+body{margin:0;font-family:sans-serif;background:#f5f6fa}
+.top{
+background:linear-gradient(135deg,#ff512f,#dd2476);
+color:#fff;padding:20px;font-size:22px;font-weight:bold}
+.banner{
+margin:15px;border-radius:15px;padding:20px;
+background:linear-gradient(135deg,#ff7a18,#ffb347);
+color:#fff}
+.banner button{
+background:#fff;color:#ff512f;border:none;
+padding:10px 20px;border-radius:20px;font-weight:bold}
 
-.big-row{display:flex;gap:10px;margin:10px}
-.big-card{flex:1;padding:20px;border-radius:12px;color:#fff;font-weight:bold}
-.popular{background:linear-gradient(135deg,#4facfe,#00f2fe)}
-.lottery{background:linear-gradient(135deg,#ff7eb3,#ff758c)}
-.mini{background:linear-gradient(135deg,#a18cd1,#fbc2eb)}
+.wallet{
+margin:15px;background:#fff;border-radius:15px;
+padding:15px;display:flex;justify-content:space-between;align-items:center}
+.wallet button{border:none;padding:10px 15px;border-radius:15px;color:#fff}
+.w1{background:orange}.w2{background:red}
 
-.cat-row{display:flex;background:#ff6b6b;color:#fff}
-.cat{flex:1;text-align:center;padding:10px;font-size:13px;cursor:pointer}
-.cat:hover{background:#ff4d4d}
+.row{display:flex;gap:10px;padding:0 15px}
+.card{
+flex:1;padding:20px;border-radius:15px;color:#fff;font-weight:bold;text-align:center}
+.c1{background:linear-gradient(135deg,#36d1dc,#5b86e5)}
+.c2{background:linear-gradient(135deg,#ff758c,#ff7eb3)}
+.c3{background:linear-gradient(135deg,#c471f5,#fa71cd)}
 
-.section{margin:10px}
-.game-card{background:#fff;border-radius:12px;padding:12px;margin-top:8px}
+.strip{
+margin:15px;background:#ff6b6b;color:#fff;
+padding:12px;border-radius:12px;
+display:flex;justify-content:space-around}
 
-.bottom{position:fixed;bottom:0;width:100%;background:#fff;
-display:flex;justify-content:space-around;padding:8px 0;
-box-shadow:0 -3px 8px rgba(0,0,0,.2)}
-.bottom div{text-align:center;font-size:12px;color:#777}
-.bottom .active{color:#ff4d4d;font-weight:bold}
-.center-btn{
-width:55px;height:55px;background:#ff4d4d;color:#fff;
-border-radius:50%;display:flex;align-items:center;
-justify-content:center;margin-top:-30px;font-size:20px}
+.popular{margin:15px;font-weight:bold}
+.game{
+background:#fff;margin:10px 15px;padding:15px;border-radius:15px;
+display:flex;align-items:center;gap:10px}
+
+.bottom{
+position:fixed;bottom:0;width:100%;background:#fff;
+display:flex;justify-content:space-around;padding:10px 0}
+.mid{
+background:#ff4757;color:#fff;width:50px;height:50px;
+border-radius:50%;display:flex;align-items:center;justify-content:center;
+margin-top:-25px;font-size:22px}
 </style>
 </head>
 <body>
 
-<div class="header">
-  <div class="logo">BIGPRO</div>
-</div>
+<div class="top">BIGPRO</div>
 
 <div class="banner">
-  <h3>Weekly Slot Betting Challenge</h3>
-  Betting & Win up to ₹3000
-  <br><br>
-  <button class="btn deposit">PLAY NOW</button>
+<h3>Weekly Slot Betting Challenge</h3>
+<p>Bet & Win up to ₹3000</p>
+<button>PLAY NOW</button>
 </div>
 
 <div class="wallet">
-  <div>💰 Wallet balance<br><b>₹58.00</b></div>
-  <div>
-    <button class="btn withdraw" onclick="alert('Withdraw Clicked')">Withdraw</button>
-    <button class="btn deposit" onclick="alert('Deposit Clicked')">Deposit</button>
-  </div>
+<div>💰 Wallet Balance<br><b>₹58.00</b></div>
+<div>
+<button class="w1">Withdraw</button>
+<button class="w2">Deposit</button>
+</div>
 </div>
 
-<div class="big-row">
-  <div class="big-card popular" onclick="openGame('Popular')">🏆 Popular</div>
-  <div class="big-card lottery" onclick="openGame('Lottery')">🎱 Lottery</div>
-  <div class="big-card mini" onclick="openGame('Mini games')">✈️ Mini games</div>
+<div class="row">
+<div class="card c1">🏆 Popular</div>
+<div class="card c2">🎱 Lottery</div>
+<div class="card c3">✈ Mini Games</div>
 </div>
 
-<div class="cat-row">
-  <div class="cat" onclick="openGame('Slots')">🎰 Slots</div>
-  <div class="cat" onclick="openGame('Fishing')">🐟 Fishing</div>
-  <div class="cat" onclick="openGame('PVC')">🃏 PVC</div>
-  <div class="cat" onclick="openGame('Sports')">⚽ Sports</div>
-  <div class="cat" onclick="openGame('Casino')">🎲 Casino</div>
+<div class="strip">
+<div>🎰 Slots</div>
+<div>🐟 Fishing</div>
+<div>⚽ Sports</div>
+<div>🎲 Casino</div>
 </div>
 
-<div class="section">
-  <h3>🔥 Popular</h3>
-  <div class="game-card" onclick="openGame('Win Go')">🎱 WIN GO</div>
-  <div class="game-card" onclick="openGame('Aviator')">✈️ AVIATOR</div>
-  <div class="game-card" onclick="openGame('Cricket')">🏏 CRICKET</div>
-</div>
-
-<br><br><br><br>
+<div class="popular">🔥 Popular</div>
+<div class="game">🎱 WIN GO</div>
+<div class="game">✈ AVIATOR</div>
+<div class="game">🏏 CRICKET</div>
 
 <div class="bottom">
-  <div onclick="nav('Promotion')">💖<br>Promotion</div>
-  <div onclick="nav('Activity')">🎁<br>Activity</div>
-  <div class="center-btn" onclick="nav('Game')">🎮</div>
-  <div onclick="nav('Wallet')">💼<br>Wallet</div>
-  <div onclick="nav('Account')">👤<br>Account</div>
+<div>🏠 Home</div>
+<div>🎁 Activity</div>
+<div class="mid">🎮</div>
+<div>💼 Wallet</div>
+<div>👤 Me</div>
 </div>
-
-<script>
-function openGame(name){
-  alert(name + " Opened");
-}
-function nav(name){
-  alert(name + " Page");
-}
-</script>
 
 </body>
 </html>
