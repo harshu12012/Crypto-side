@@ -55,14 +55,12 @@ body{
   border-radius:18px;
   height:100px;
   overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
 }
 .game-btn img{
   width:100%;
   height:100%;
-  object-fit:cover;   /* 🔥 FIX */
+  object-fit:cover;
+  padding:0px;
 }
 
 /* BIG BUTTONS */
@@ -93,15 +91,15 @@ body{
 }
 
 .nav-item img{
-  width:36px;   /* 🔥 slightly bigger */
-  height:36px;
+  width:40px;
+  height:40px;
 }
 
 /* INVITE */
 .invite{
   width:64px;
   height:64px;
-  background:transparent;   /* 🔥 FIX */
+  background:#ff0000;
   border-radius:50%;
   display:flex;
   align-items:center;
@@ -109,8 +107,8 @@ body{
   margin-top:-32px;
 }
 .invite img{
-  width:44px;   /* 🔥 bigger icon */
-  height:44px;
+  width:34px;
+  height:34px;
 }
 </style>
 </head>
@@ -121,7 +119,7 @@ body{
 
 <!-- BANNER -->
 <div class="banner">
-  <img src="Image/banner.jpg" onerror="this.src='Image/Lottery.png'">
+  <img src="Image/Banner.png" onerror="this.src='Image/Lottery.png'">
 </div>
 
 <!-- GAME BUTTONS -->
@@ -156,4 +154,4 @@ body{
 </div>
 
 </body>
-</html>
+    </html>
