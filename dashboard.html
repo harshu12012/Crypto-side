@@ -58,11 +58,11 @@ body{
 .game-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:8px;          /* 🔥 real row + column gap */
-  padding:10px;     /* 🔥 extra white space कम */
+  gap:6px;              /* 🔥 white space कम */
+  padding:0 14px 14px;
 }
 .game-btn{
-  background:transperent;
+  background:#e56a6a;
   border-radius:18px;
   height:115px;         /* 🔥 थोड़ा बड़ा */
   overflow:hidden;
@@ -70,7 +70,7 @@ body{
 .game-btn img{
   width:100%;
   height:100%;
-  object-fit:cobject;    /* 🔥 stretch नहीं होगा */
+  object-fit:cover;     /* 🔥 stretch नहीं होगा */
   display:block;
 }
 
