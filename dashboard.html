@@ -42,30 +42,36 @@ body{
   object-fit:cover;
   display:block;
 }
-/* GAME GRID ROWS */
-.grid-2{
+
+/* ===== LOTTERY + SLOTS (2 ROW) ===== */
+.top-games{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:12px;
+  gap:10px;
   padding:14px;
 }
+.top-games .game-btn{
+  height:95px;
+}
+
+/* ===== 6 GAMES (3 x 2 GRID) ===== */
 .game-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:6px;
-  padding:12px;
+  gap:6px;              /* 🔥 white space कम */
+  padding:0 14px 14px;
 }
 .game-btn{
-  background:transparent;
+  background:#e56a6a;
   border-radius:18px;
-  height:110px;
+  height:115px;         /* 🔥 थोड़ा बड़ा */
   overflow:hidden;
 }
 .game-btn img{
   width:100%;
   height:100%;
-  object-fit:cover;
-  padding:0px;
+  object-fit:cover;     /* 🔥 stretch नहीं होगा */
+  display:block;
 }
 
 /* BIG BUTTONS */
@@ -94,10 +100,9 @@ body{
   justify-content:space-around;
   align-items:center;
 }
-
 .nav-item img{
-  width:40px;
-  height:40px;
+  width:32px;
+  height:32px;
 }
 
 /* INVITE */
@@ -127,21 +132,18 @@ body{
   <img src="Image/Banner.png" onerror="this.src='Image/Lottery.png'">
 </div>
 
-<!-- ROW 1 : 2 BUTTON (Lottery & Slots SAME) -->
-<div class="grid-2">
+<!-- LOTTERY + SLOTS (UNCHANGED) -->
+<div class="top-games">
   <div class="game-btn"><img src="Image/Lottery.png"></div>
   <div class="game-btn"><img src="Image/Slots.png"></div>
 </div>
 
-<!-- ROW 2 : 3 BUTTON -->
-<div class="grid-3">
+<!-- 6 GAME BUTTONS (3 x 2) -->
+<div class="game-grid">
   <div class="game-btn"><img src="Image/Fishing.png"></div>
   <div class="game-btn"><img src="Image/Rummy.png"></div>
   <div class="game-btn"><img src="Image/Casino.png"></div>
-</div>
 
-<!-- ROW 3 : 3 BUTTON -->
-<div class="grid-3">
   <div class="game-btn"><img src="Image/Popular.png"></div>
   <div class="game-btn"><img src="Image/Original.png"></div>
   <div class="game-btn"><img src="Image/Sports.png"></div>
@@ -167,4 +169,4 @@ body{
 </div>
 
 </body>
-    </html>
+</html>
