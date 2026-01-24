@@ -6,88 +6,28 @@
 <title>Account</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
-}
-
 body{
-  background:#f6f7f9;
+  margin:0;
+  font-family:Arial;
+  background:#f6f6f6;
   padding-bottom:90px;
 }
 
 /* HEADER */
 .header{
-  background:linear-gradient(90deg,#ff6b6b,#ff8e8e);
-  padding:18px;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  gap:12px;
+  background:red;
+  text-align:center;
+  padding:14px 0;
 }
 .header img{
-  width:60px;
-  height:60px;
-  border-radius:50%;
-}
-.header .info{
-  flex:1;
-}
-.header .info h3{
-  font-size:16px;
-}
-.header .info p{
-  font-size:12px;
-  opacity:.9;
+  height:40px;
 }
 
-/* BALANCE CARD */
-.balance{
-  background:#fff;
-  margin:15px;
-  padding:15px;
-  border-radius:12px;
-}
-.balance h2{
-  font-size:22px;
-}
-
-/* QUICK BUTTONS */
-.quick{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
-  margin-top:15px;
-}
-.quick div{
+/* CONTENT */
+.content{
+  padding:20px;
   text-align:center;
-  font-size:13px;
-}
-.quick img{
-  width:40px;
-  margin-bottom:6px;
-}
-
-/* LIST */
-.list{
-  background:#fff;
-  margin:15px;
-  border-radius:12px;
-  overflow:hidden;
-}
-.list div{
-  padding:14px;
-  border-bottom:1px solid #eee;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-size:14px;
-}
-.list div:last-child{border:none;}
-.list img{
-  width:22px;
+  font-size:18px;
 }
 
 /* BOTTOM NAV */
@@ -100,3 +40,54 @@ body{
   background:#fff;
   border-top:1px solid #ddd;
   display:flex;
+  justify-content:space-around;
+  align-items:center;
+}
+.nav-item img{
+  width:45px;
+  height:45px;
+}
+.nav-item.active img{
+  filter: brightness(0) saturate(100%) invert(24%) sepia(96%) saturate(7494%) hue-rotate(356deg) brightness(95%) contrast(118%);
+}
+.nav-item.active span{
+  color:red;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <img src="Image/Mylogo.png">
+</div>
+
+<div class="content">
+  👤 ACCOUNT PAGE OPEN HO GAYA  
+</div>
+
+<div class="bottom-nav">
+  <a href="dashboard.html" class="nav-item">
+    <img src="Image/Home.png"><br>Home
+  </a>
+
+  <a href="#" class="nav-item">
+    <img src="Image/Activity.png"><br>Activity
+  </a>
+
+  <div>
+    <img src="Image/Invite.png" width="60">
+  </div>
+
+  <a href="#" class="nav-item">
+    <img src="Image/Wallet.png"><br>Wallet
+  </a>
+
+  <a href="account.html" class="nav-item active">
+    <img src="Image/Account.png"><br>Account
+  </a>
+</div>
+
+</body>
+</html>
