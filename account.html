@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Account</title>
-
-<style>
 *{
   margin:0;
   padding:0;
@@ -14,7 +6,7 @@
 }
 
 body{
-  background:#f5f6fa;
+  background:#f4f6fb;
   padding-bottom:90px;
 }
 
@@ -35,30 +27,34 @@ body{
   display:flex;
   align-items:center;
   gap:14px;
+  border-radius:0 0 22px 22px;
 }
 .profile img{
-  width:60px;
-  height:60px;
+  width:64px;
+  height:64px;
   border-radius:50%;
   object-fit:cover;
+  border:2px solid #fff;
 }
 .profile .info{
   color:#fff;
 }
 .profile .info h3{
   font-size:16px;
+  margin-bottom:4px;
 }
 .profile .info p{
   font-size:13px;
   opacity:.9;
 }
 
-/* BALANCE CARD */
+/* BALANCE */
 .balance{
   background:#fff;
   margin:14px;
   padding:16px;
-  border-radius:14px;
+  border-radius:16px;
+  box-shadow:0 4px 10px rgba(0,0,0,.06);
 }
 .balance h4{
   color:#777;
@@ -66,39 +62,41 @@ body{
 }
 .balance h2{
   margin-top:6px;
+  font-size:26px;
 }
 
-/* QUICK ACTIONS */
+/* ACTION ICONS */
 .actions{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:10px;
+  gap:12px;
   margin:0 14px;
 }
 .action{
   background:#fff;
-  border-radius:12px;
-  padding:12px 6px;
+  border-radius:14px;
+  padding:14px 6px;
   text-align:center;
   font-size:13px;
+  box-shadow:0 3px 8px rgba(0,0,0,.05);
 }
 .action img{
-  width:32px;
-  margin-bottom:6px;
+  width:36px;
+  margin-bottom:8px;
 }
 
-/* MENU LIST */
+/* MENU */
 .menu{
   background:#fff;
   margin:14px;
-  border-radius:14px;
+  border-radius:16px;
   overflow:hidden;
 }
 .menu-item{
   display:flex;
   align-items:center;
-  gap:12px;
-  padding:14px;
+  gap:14px;
+  padding:15px;
   border-bottom:1px solid #eee;
   font-size:15px;
 }
@@ -106,7 +104,7 @@ body{
   border-bottom:none;
 }
 .menu-item img{
-  width:26px;
+  width:28px;
 }
 
 /* BOTTOM NAV */
@@ -129,14 +127,13 @@ body{
 }
 .nav-item img{
   width:40px;
-  height:40px;
-}
-.nav-item.active img{
-  filter: brightness(0) saturate(100%) invert(24%) sepia(96%) saturate(7494%) hue-rotate(356deg) brightness(95%) contrast(118%);
 }
 .nav-item.active{
   color:red;
   font-weight:bold;
+}
+.nav-item.active img{
+  filter: brightness(0) saturate(100%) invert(24%) sepia(96%) saturate(7494%) hue-rotate(356deg) brightness(95%) contrast(118%);
 }
 
 /* INVITE */
@@ -148,93 +145,3 @@ body{
 .invite img{
   width:72px;
 }
-</style>
-</head>
-
-<body>
-
-<!-- HEADER -->
-<div class="header">
-  <img src="Image/Mylogo.png">
-</div>
-
-<!-- PROFILE -->
-<div class="profile">
-  <img src="Image/Account.png">
-  <div class="info">
-    <h3>MEMBER123456</h3>
-    <p>UID: 18187762</p>
-  </div>
-</div>
-
-<!-- BALANCE -->
-<div class="balance">
-  <h4>Total Balance</h4>
-  <h2>₹ 58.00</h2>
-</div>
-
-<!-- QUICK ACTIONS -->
-<div class="actions">
-  <div class="action">
-    <img src="Image/Wallet.png">
-    Wallet
-  </div>
-  <div class="action">
-    <img src="Image/Deposit.png">
-    Deposit
-  </div>
-  <div class="action">
-    <img src="Image/Withdraw.png">
-    Withdraw
-  </div>
-  <div class="action">
-    <img src="Image/VIP.png">
-    VIP
-  </div>
-</div>
-
-<!-- MENU -->
-<div class="menu">
-  <div class="menu-item">
-    <img src="Image/Activity.png"> Game History
-  </div>
-  <div class="menu-item">
-    <img src="Image/Wallet.png"> Transaction History
-  </div>
-  <div class="menu-item">
-    <img src="Image/Deposit.png"> Deposit History
-  </div>
-  <div class="menu-item">
-    <img src="Image/Withdraw.png"> Withdraw History
-  </div>
-  <div class="menu-item">
-    <img src="Image/Notification.png"> Notification
-  </div>
-  <div class="menu-item">
-    <img src="Image/Language.png"> Language
-  </div>
-</div>
-
-<!-- BOTTOM NAV -->
-<div class="bottom-nav">
-  <a href="index.html" class="nav-item">
-    <img src="Image/Home.png"><br>Home
-  </a>
-  <a href="#" class="nav-item">
-    <img src="Image/Activity.png"><br>Activity
-  </a>
-
-  <div class="invite">
-    <img src="Image/Invite.png">
-  </div>
-
-  <a href="#" class="nav-item">
-    <img src="Image/Wallet.png"><br>Wallet
-  </a>
-  <a href="account.html" class="nav-item active">
-    <img src="Image/Account.png"><br>Account
-  </a>
-</div>
-
-</body>
-</html>
