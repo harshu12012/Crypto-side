@@ -10,105 +10,149 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
 }
 body{
-  background:#f4f6fb;
+  background:#f5f6fb;
   padding-bottom:90px;
 }
 
-/* ===== HEADER ===== */
+/* TOP BAR */
 .header{
   background:#ff0000;
   text-align:center;
   padding:14px 0;
 }
 .header img{
-  height:42px;
+  height:40px;
 }
 
-/* ===== PROFILE ===== */
+/* PROFILE */
 .profile{
-  background:linear-gradient(90deg,#ff6b6b,#ff8e8e);
-  padding:18px;
+  background:linear-gradient(90deg,#ff6a6a,#ff9a8b);
+  padding:16px;
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:12px;
   color:#fff;
 }
 .profile img{
-  width:70px;
-  height:70px;
+  width:60px;
+  height:60px;
   border-radius:50%;
   object-fit:cover;
 }
-.profile .info h3{
+.profile .info{
+  flex:1;
+}
+.profile .name{
   font-size:16px;
   font-weight:bold;
 }
-.profile .info p{
-  font-size:13px;
+.vip{
+  background:#fff;
+  color:#ff5a5a;
+  font-size:11px;
+  padding:2px 6px;
+  border-radius:10px;
+  margin-left:6px;
+}
+.uid{
+  background:#ffcc66;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  color:#333;
+  font-size:12px;
+  padding:2px 6px;
+  border-radius:8px;
+  margin-top:4px;
+}
+.last{
+  font-size:12px;
   opacity:.9;
 }
 
-/* ===== BALANCE CARD ===== */
+/* BALANCE */
 .balance{
   background:#fff;
   margin:14px;
-  border-radius:16px;
   padding:16px;
+  border-radius:14px;
 }
 .balance h4{
-  color:#666;
+  color:#777;
   font-size:14px;
 }
 .balance .amount{
-  font-size:26px;
+  font-size:28px;
   font-weight:bold;
   margin-top:6px;
 }
 
-/* ===== QUICK ACTIONS ===== */
-.quick{
+/* QUICK ACTIONS */
+.actions{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:10px;
   margin:0 14px;
 }
-.quick div{
+.action{
   background:#fff;
   border-radius:14px;
-  padding:12px 5px;
+  padding:12px 0;
   text-align:center;
   font-size:13px;
 }
-.quick img{
+.action img{
   width:36px;
-  height:36px;
   margin-bottom:6px;
 }
 
-/* ===== MENU ===== */
-.menu{
-  background:#fff;
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
   margin:14px;
-  border-radius:16px;
-  overflow:hidden;
 }
-.menu-item{
-  display:flex;
-  align-items:center;
+.card{
+  background:#fff;
+  border-radius:14px;
   padding:14px;
-  border-bottom:1px solid #eee;
+}
+.card img{
+  width:36px;
+}
+.card h4{
+  margin-top:6px;
   font-size:14px;
 }
-.menu-item:last-child{border-bottom:none;}
-.menu-item img{
-  width:26px;
-  margin-right:12px;
+.card p{
+  font-size:12px;
+  color:#888;
 }
 
-/* ===== BOTTOM NAV ===== */
+/* LIST */
+.list{
+  background:#fff;
+  margin:14px;
+  border-radius:14px;
+  overflow:hidden;
+}
+.list-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:14px;
+  border-bottom:1px solid #eee;
+}
+.list-item:last-child{border:none;}
+.list-item img{
+  width:28px;
+}
+
+/* BOTTOM NAV */
 .bottom-nav{
   position:fixed;
   bottom:0;
@@ -125,23 +169,12 @@ body{
   text-align:center;
   font-size:12px;
   color:#999;
-  text-decoration:none;
 }
 .nav-item img{
-  width:28px;
-  height:28px;
+  width:30px;
 }
 .nav-item.active{
   color:red;
-  font-weight:bold;
-}
-.nav-item.active img{
-  filter: brightness(0) saturate(100%) invert(21%) sepia(93%) saturate(6000%) hue-rotate(355deg);
-}
-
-/* CENTER BUTTON */
-.invite{
-  margin-top:-30px;
 }
 .invite img{
   width:64px;
@@ -151,48 +184,71 @@ body{
 
 <body>
 
-<!-- HEADER -->
+<!-- TOP -->
 <div class="header">
   <img src="Image/Mylogo.png">
 </div>
 
 <!-- PROFILE -->
 <div class="profile">
-  <img src="Image/profile.jpg" onerror="this.src='Image/Account.png'">
+  <img src="Image/profile.jpg">
   <div class="info">
-    <h3>MEMBERNNG4RTR8</h3>
-    <p>UID : 18187762</p>
-    <p>Last login : 2026-01-24 17:03</p>
+    <div class="name">
+      MEMBERNNG4RTR8 <span class="vip">VIP0</span>
+    </div>
+    <div class="uid">UID | 18187762 📋</div>
+    <div class="last">Last login: 2026-01-24 17:03:25</div>
   </div>
 </div>
 
 <!-- BALANCE -->
 <div class="balance">
   <h4>Total balance</h4>
-  <div class="amount">₹ 58.00</div>
+  <div class="amount">₹58.00 ⟳</div>
 </div>
 
-<!-- QUICK ACTIONS -->
-<div class="quick">
-  <div><img src="Image/Wallet.png"><br>ARWallet</div>
-  <div><img src="Image/Deposit.png"><br>Deposit</div>
-  <div><img src="Image/Withdraw.png"><br>Withdraw</div>
-  <div><img src="Image/VIP.png"><br>VIP</div>
+<!-- ACTIONS -->
+<div class="actions">
+  <div class="action"><img src="Image/arwallet.png"><div>ARWallet</div></div>
+  <div class="action"><img src="Image/deposit.png"><div>Deposit</div></div>
+  <div class="action"><img src="Image/withdraw.png"><div>Withdraw</div></div>
+  <div class="action"><img src="Image/vip.png"><div>VIP</div></div>
 </div>
 
-<!-- MENU -->
-<div class="menu">
-  <div class="menu-item"><img src="Image/Activity.png">Game History</div>
-  <div class="menu-item"><img src="Image/Wallet.png">Transaction History</div>
-  <div class="menu-item"><img src="Image/Deposit.png">Deposit History</div>
-  <div class="menu-item"><img src="Image/Withdraw.png">Withdraw History</div>
-  <div class="menu-item"><img src="Image/Notification.png">Notification</div>
-  <div class="menu-item"><img src="Image/Gift.png">Gifts</div>
-  <div class="menu-item"><img src="Image/Language.png">Language</div>
+<!-- CARDS -->
+<div class="cards">
+  <div class="card">
+    <img src="Image/game.png">
+    <h4>Game History</h4>
+    <p>My game history</p>
+  </div>
+  <div class="card">
+    <img src="Image/transaction.png">
+    <h4>Transaction</h4>
+    <p>My transaction history</p>
+  </div>
+</div>
+
+<!-- LIST -->
+<div class="list">
+  <div class="list-item"><img src="Image/deposit.png">Deposit history</div>
+  <div class="list-item"><img src="Image/withdraw.png">Withdraw history</div>
+  <div class="list-item"><img src="Image/notification.png">Notification</div>
+  <div class="list-item"><img src="Image/gift.png">Gifts</div>
+  <div class="list-item"><img src="Image/stats.png">Game statistics</div>
+  <div class="list-item"><img src="Image/lang.png">Language <span style="margin-left:auto;">English</span></div>
 </div>
 
 <!-- BOTTOM NAV -->
 <div class="bottom-nav">
-  <a href="index.html" class="nav-item">
-    <img src="Image/Home.png"><br>Home
-  </a
+  <a href="index.html" class="nav-item"><img src="Image/Home.png"><div>Home</div></a>
+  <a href="#" class="nav-item"><img src="Image/Activity.png"><div>Activity</div></a>
+
+  <div class="invite"><img src="Image/Invite.png"></div>
+
+  <a href="#" class="nav-item"><img src="Image/Wallet.png"><div>Wallet</div></a>
+  <a href="account.html" class="nav-item active"><img src="Image/Account.png"><div>Account</div></a>
+</div>
+
+</body>
+  </html>
