@@ -17,22 +17,19 @@ body{
   padding-bottom:120px;
 }
 
-/* TOP BAR */
+/* HEADER */
 .header{
   background:#ff0000;
   text-align:center;
   padding:14px 0;
 }
-.header img{
-  height:40px;
-}
+.header img{height:40px;}
 
 /* PROFILE */
 .profile{
   background:linear-gradient(90deg,#ff6a6a,#ff9a8b);
   padding:16px;
   display:flex;
-  align-items:center;
   gap:12px;
   color:#fff;
 }
@@ -42,8 +39,8 @@ body{
   border-radius:50%;
   object-fit:cover;
 }
-.profile .info{flex:1;}
-.name{font-size:16px;font-weight:bold;}
+.info{flex:1;}
+.name{font-weight:bold;}
 .vip{
   background:#fff;
   color:#ff5a5a;
@@ -53,15 +50,13 @@ body{
   margin-left:6px;
 }
 .uid{
+  margin-top:4px;
   background:#ffcc66;
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
   color:#333;
   font-size:12px;
   padding:2px 6px;
   border-radius:8px;
-  margin-top:4px;
+  display:inline-block;
 }
 .last{font-size:12px;opacity:.9;}
 
@@ -82,18 +77,22 @@ body{
 /* ACTIONS */
 .actions{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
   margin:0 14px;
 }
 .action{
   background:#fff;
   border-radius:14px;
-  padding:12px 0;
+  padding:14px 0;
   text-align:center;
   font-size:13px;
 }
-.action img{width:36px;margin-bottom:6px;}
+.action img{
+  width:40px;
+  height:40px;
+  margin-bottom:6px;
+}
 
 /* CARDS */
 .cards{
@@ -112,9 +111,7 @@ body{
 .card p{font-size:12px;color:#888;}
 
 /* LOGOUT */
-.logout-wrap{
-  margin:20px 14px 0;
-}
+.logout-wrap{margin:20px 14px;}
 .logout-btn{
   width:100%;
   height:48px;
@@ -123,12 +120,7 @@ body{
   background:transparent;
   color:#ff6a6a;
   font-size:16px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
 }
-.logout-btn img{width:22px;}
 
 /* BOTTOM NAV */
 .bottom-nav{
@@ -148,7 +140,11 @@ body{
   font-size:12px;
   color:#999;
 }
-.nav-item img{width:30px;}
+.nav-item img{
+  width:30px;
+  display:block;
+  margin:0 auto 4px;
+}
 .nav-item.active{color:red;}
 .invite img{width:64px;}
 </style>
@@ -156,37 +152,30 @@ body{
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <img src="Image/Mylogo.png">
 </div>
 
-<!-- PROFILE -->
 <div class="profile">
   <img src="Image/Profile.jpg">
   <div class="info">
-    <div class="name">
-      MEMBERNNG4RTR8 <span class="vip">VIP0</span>
-    </div>
+    <div class="name">MEMBERNNG4RTR8 <span class="vip">VIP0</span></div>
     <div class="uid">UID | 18187762 📋</div>
     <div class="last">Last login: 2026-01-24 17:03:25</div>
   </div>
 </div>
 
-<!-- BALANCE -->
 <div class="balance">
   <h4>Total balance</h4>
   <div class="amount">₹00.0 ⟳</div>
 </div>
 
-<!-- ACTIONS -->
 <div class="actions">
   <div class="action"><img src="Image/Deposit.png"><div>Deposit</div></div>
   <div class="action"><img src="Image/Withdraw.png"><div>Withdraw</div></div>
   <div class="action"><img src="Image/Vip.png"><div>VIP</div></div>
 </div>
 
-<!-- HISTORY CARDS -->
 <div class="cards">
   <div class="card">
     <img src="Image/Game.history.png">
@@ -210,21 +199,19 @@ body{
   </div>
 </div>
 
-<!-- LOGOUT -->
 <div class="logout-wrap">
-  <button class="logout-btn">
-     Log out
-  </button>
+  <button class="logout-btn">Log out</button>
 </div>
 
-<!-- BOTTOM NAV -->
 <div class="bottom-nav">
   <a href="index.html" class="nav-item">
-    <img src="Image/Home.png"><div</div>
+    <img src="Image/Home.png">
+    <div>Home</div>
   </a>
 
   <a href="#" class="nav-item">
-    <img src="Image/Activity.png"><div></div>
+    <img src="Image/Activity.png">
+    <div>Activity</div>
   </a>
 
   <div class="invite">
@@ -232,13 +219,15 @@ body{
   </div>
 
   <a href="#" class="nav-item">
-    <img src="Image/Wallet.png"><div></div>
+    <img src="Image/Wallet.png">
+    <div>Wallet</div>
   </a>
 
   <a href="account.html" class="nav-item active">
-    <img src="Image/Account.png"><div></div>
+    <img src="Image/Account.png">
+    <div>Account</div>
   </a>
 </div>
 
 </body>
-</html>
+    </html>
