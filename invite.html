@@ -15,7 +15,7 @@
 
 body{
   background:#f6f7fb;
-  padding-bottom:90px;
+  padding-bottom:150px; /* ✅ FIX */
 }
 
 /* HEADER */
@@ -72,7 +72,7 @@ body{
 .stats h4{font-size:14px;color:#ff6a6a;margin-bottom:8px;}
 .stats p{font-size:12px;color:#555;margin:6px 0}
 
-/* INVITE MAIN BUTTON */
+/* INVITE BUTTON */
 .invite-main{margin:14px;}
 .invite-main button{
   width:100%;
@@ -95,13 +95,27 @@ body{
   justify-content:space-between;
   margin-bottom:12px;
 }
-.left{display:flex;align-items:center;gap:10px;}
+.left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* ✅ ICON FIX */
 .icon{
   width:36px;
   height:36px;
   border-radius:50%;
   background:#ffe3e3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
+.icon img{
+  width:20px;
+  height:20px;
+}
+
 .code{font-size:13px;color:#999}
 
 /* PROMO */
@@ -125,7 +139,7 @@ body{
 }
 .promo-grid strong{display:block;font-size:16px}
 
-/* ===== BOTTOM NAV ===== */
+/* BOTTOM NAV */
 .bottom-nav{
   position:fixed;
   bottom:0;
@@ -138,9 +152,9 @@ body{
   justify-content:space-around;
   align-items:center;
   z-index:999;
+  position:relative;
 }
 
-/* NAV ITEM */
 .nav-item{
   text-align:center;
   font-size:12px;
@@ -155,23 +169,21 @@ body{
 }
 
 /* ACTIVE */
-.nav-item.active{
-  color:red;
-}
+.nav-item.active{color:red;}
 .nav-item.active img{
   filter: brightness(0) saturate(100%) invert(18%) sepia(96%)
           saturate(7450%) hue-rotate(356deg) brightness(95%) contrast(120%);
 }
 
-/* INVITE CENTER BUTTON */
-.nav-item.invite{
+/* CENTER INVITE */
+.invite-btn{
   position:absolute;
   left:50%;
   transform:translateX(-50%);
   top:-32px;
   z-index:1000;
 }
-.nav-item.invite img{
+.invite-btn img{
   width:72px;
   height:72px;
 }
@@ -180,20 +192,17 @@ body{
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <a href="index.html">←</a>
   Agency
 </div>
 
-<!-- TOP -->
 <div class="top">
   <div class="big">0</div>
   <div class="sub">Yesterday's total commission</div>
   <p>Upgrade the level to increase commission income</p>
 </div>
 
-<!-- STATS -->
 <div class="stats">
   <div class="box">
     <h4>Direct subordinates</h4>
@@ -215,16 +224,44 @@ body{
   <button>INVITE</button>
 </div>
 
-<!-- LIST -->
 <div class="list">
-  <div class="item"><div class="left"><div class="icon"></div>Partner rewards</div>➤</div>
-  <div class="item"><div class="left"><div class="icon"></div>Copy invitation code</div><span class="code">6577818187762</span></div>
-  <div class="item"><div class="left"><div class="icon"></div>Subordinate data</div>➤</div>
-  <div class="item"><div class="left"><div class="icon"></div>Commission detail</div>➤</div>
-  <div class="item"><div class="left"><div class="icon"></div>Invitation rules</div>➤</div>
+  <div class="item">
+    <div class="left">
+      <div class="icon"><img src="Image/reward.png"></div>
+      Partner rewards
+    </div> ➤
+  </div>
+
+  <div class="item">
+    <div class="left">
+      <div class="icon"><img src="Image/copy.png"></div>
+      Copy invitation code
+    </div>
+    <span class="code">6577818187762</span>
+  </div>
+
+  <div class="item">
+    <div class="left">
+      <div class="icon"><img src="Image/data.png"></div>
+      Subordinate data
+    </div> ➤
+  </div>
+
+  <div class="item">
+    <div class="left">
+      <div class="icon"><img src="Image/commission.png"></div>
+      Commission detail
+    </div> ➤
+  </div>
+
+  <div class="item">
+    <div class="left">
+      <div class="icon"><img src="Image/rules.png"></div>
+      Invitation rules
+    </div> ➤
+  </div>
 </div>
 
-<!-- PROMO -->
 <div class="promo">
   <h4>Promotion data</h4>
   <div class="promo-grid">
@@ -235,34 +272,27 @@ body{
   </div>
 </div>
 
-<!-- BOTTOM NAV -->
 <div class="bottom-nav">
-
   <a href="index.html" class="nav-item">
-    <img src="Image/Home.png">
-    Home
+    <img src="Image/Home.png">Home
   </a>
 
   <a href="activity.html" class="nav-item">
-    <img src="Image/Activity.png">
-    Activity
+    <img src="Image/Activity.png">Activity
   </a>
 
-  <a href="invite.html" class="nav-item invite active">
+  <a href="invite.html" class="invite-btn">
     <img src="Image/Invite.png">
   </a>
 
   <a href="wallet.html" class="nav-item">
-    <img src="Image/Wallet.png">
-    Wallet
+    <img src="Image/Wallet.png">Wallet
   </a>
 
-  <a href="account.html" class="nav-item">
-    <img src="Image/Account.png">
-    Account
+  <a href="account.html" class="nav-item active">
+    <img src="Image/Account.png">Account
   </a>
-
 </div>
 
 </body>
-  </html>
+</html>
